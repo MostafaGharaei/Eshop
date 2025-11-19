@@ -15,6 +15,7 @@ namespace IDP.Api.Controllers.BaseController.V1
         {
             _mediator = mediator;
         }
+        //افزودن کاربر جدید
         [HttpPost("Insert")]
         public async Task<IActionResult> Insert([FromBody] UserCommand userCommand)
         {
