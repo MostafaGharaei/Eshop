@@ -2,11 +2,14 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using IDP.Application.Command.User;
+using Asp.Versioning;
 
 namespace IDP.Api.Controllers.BaseController.V1
 {
-    [Route("api/v1/user")]
     [ApiController]
+    [ApiVersion(2)]
+    [ApiVersion(1)]
+    [Route("api/v{v:apiVersion}/Users")]
     
     public class UserController : IBaseController
     {
@@ -16,6 +19,7 @@ namespace IDP.Api.Controllers.BaseController.V1
             _mediator = mediator;
         }
         //افزودن کاربر جدید
+        [MapToApiVersion(1)]
         [HttpPost("Insert")]
         public async Task<IActionResult> Insert([FromBody] UserCommand userCommand)
         {

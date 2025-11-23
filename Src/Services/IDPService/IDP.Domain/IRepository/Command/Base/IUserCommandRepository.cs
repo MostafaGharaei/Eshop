@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDP.Domain.IRepository.Command
+namespace IDP.Domain.IRepository.Command.Base
 {
-    public interface IUserRepository
+    public interface IUserCommandRepository : ICommandRepository<User>
     {
-        Task<bool> Insert(User user);
+        
     }
 }
