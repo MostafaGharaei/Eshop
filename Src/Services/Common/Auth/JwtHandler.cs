@@ -35,7 +35,7 @@ namespace Auth
                 IssuerSigningKey = _issuerSigningKey
             };
         }
-        public JsonWebToken Create(Guid userId)
+        public JsonWebToken Create(Int64 userId)
         {
             var nowUtc = DateTime.UtcNow;
             var expires = nowUtc.AddMinutes(_options.ExpireMinutes);

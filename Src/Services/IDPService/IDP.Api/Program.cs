@@ -1,3 +1,5 @@
+﻿//تا دقیقه 16 قسمت 7
+
 using Asp.Versioning;
 using IDP.Application.Handller.Command.User;
 using MediatR;
@@ -26,6 +28,8 @@ builder.Services.AddApiVersioning(options =>
     options.GroupNameFormat = "'v'V";
     options.SubstituteApiVersionInUrl = true;
 });
+
+Auth.Extensions.AddJwt(builder.Services, builder.Configuration); 
 
 var app = builder.Build();
 
