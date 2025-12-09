@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDP.Application.Query.Auth
+namespace IDP.Application.Command.Auth
 {
-    public class AuthQuery : IRequest<bool>
+    public class AuthCommand : IRequest<bool>
     {
         public required string MobileNumber { get; set; }
     }
